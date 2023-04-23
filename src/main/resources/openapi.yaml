@@ -1,0 +1,96 @@
+openapi: 3.0.1
+info:
+  title: User Service contract
+  description: This is a sample specification for user service
+  version: 1.0.0
+servers:
+  - url: /
+tags:
+  - name: user
+paths:
+  /users:
+    get:
+      tags:
+        - user
+      summary: Gets a list of users
+      operationId: getUsers
+      responses:
+        200:
+          description: List of all users
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUserResponse'
+    post:
+      tags:
+        - user
+      summary: Creates a new user
+      operationId: createUser
+      requestBody:
+        description: The user data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreateRequest'
+        required: true
+      responses:
+        201:
+          description: User successfully created
+          headers:
+            Location:
+              schema:
+                type: string
+                format: uri
+              description: The URL of the newly created resource
+        400:
+          description: Validation error
+components:
+  schemas:
+    UserCreateRequest:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/PersonalInformation'
+      properties:
+        address:
+          $ref: '#/components/schemas/Address'
+    UserResponse:
+      allOf:
+        - $ref: '#/components/schemas/PersonalInformation'
+      type: object
+      properties:
+        id:
+          type: integer
+        address:
+          $ref: '#/components/schemas/Address'
+    ListUserResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/UserResponse'
+    Address:
+      type: object
+      properties:
+        street:
+          type: string
+          example: 437 Lytton
+          maxLength: 50
+        city:
+          type: string
+          example: Palo Alto
+          maxLength: 50
+        state:
+          type: string
+          example: CA
+          maxLength: 50
+        zip:
+          type: string
+          example: '94301'
+          maxLength: 10
+    PersonalInformation:
+      type: object
+      properties:
+        firstName:
+          type: string
+          maxLength: 50
+        lastName:
+          type: string
+          maxLength: 50
