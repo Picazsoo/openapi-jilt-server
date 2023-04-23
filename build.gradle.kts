@@ -62,6 +62,7 @@ openApiGenerate {
             "dateLibrary" to "java8",
             "library" to "spring-boot",
     ))
+    ignoreFileOverride.set("$rootDir/.openapi-generator-ignore")
 }
 
 sourceSets {
