@@ -25,6 +25,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.5.4.Final")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     implementation("io.github.openfeign:feign-jackson:12.3")
     implementation("io.swagger.core.v3:swagger-annotations:2.2.8")
