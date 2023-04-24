@@ -23,6 +23,12 @@ public class User {
     @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
 
+    @Column(name = "middle_name", length = 50)
+    private String middleName;
+
+    @Column(name = "email")
+    private String email;
+
     @Setter(AccessLevel.NONE)
     @OneToOne(mappedBy = "user", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Address address;
