@@ -78,11 +78,11 @@ public class UsersApiController implements UsersApi {
             return UserResponseBuilder
                     .userResponse()
                     .id(user.getId())
-                    .address(address)
+//                    .address(address)
                     .firstName(user.getFirstName())
-                    .middleName(user.getMiddleName())
+//                    .middleName(user.getMiddleName())
                     .lastName(user.getLastName())
-                    .email(user.getEmail())
+//                    .email(user.getEmail())
                     .build();
         };
     }
