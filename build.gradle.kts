@@ -66,7 +66,11 @@ openApiGenerate {
     configOptions.set(mapOf(
             "dateLibrary" to "java8",
             "library" to "spring-boot",
-    ))
+            "additionalModelTypeAnnotations" to """
+                @lombok.AllArgsConstructor
+                @org.jilt.Builder(style = org.jilt.BuilderStyle.TYPE_SAFE_UNGROUPED_OPTIONALS)""".trimIndent(),
+
+            ))
     ignoreFileOverride.set("$rootDir/.openapi-generator-ignore")
 }
 
