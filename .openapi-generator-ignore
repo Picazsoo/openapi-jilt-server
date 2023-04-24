@@ -23,3 +23,7 @@
 #!docs/README.md
 
 **/*Application.java
+**/*pom.xml
+**/*README.md
+**/*application.properties
+**/*OpenApiGeneratorApplicationTests.java

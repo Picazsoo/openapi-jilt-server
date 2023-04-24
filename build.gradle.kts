@@ -54,6 +54,8 @@ val generatedSourcesDir = "$buildDir/generated/sources/openapi"
 
 openApiGenerate {
     generatorName.set("spring")
+    generateApiTests.set(false)
+    generateModelTests.set(false)
     inputSpec.set(spec)
     outputDir.set(generatedSourcesDir)
     apiPackage.set("cz.metlicka.server.api")
