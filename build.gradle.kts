@@ -72,6 +72,7 @@ openApiGenerate {
 
             ))
     ignoreFileOverride.set("$rootDir/.openapi-generator-ignore")
+    templateDir.set("$rootDir/templates")
 }
 
 sourceSets {
