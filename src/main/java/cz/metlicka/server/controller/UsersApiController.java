@@ -87,4 +87,9 @@ public class UsersApiController implements UsersApi {
         };
     }
 
+    @Override
+    public ResponseEntity<List<UserResponse>> usersIdsGet(List<Integer> ids) {
+        List<UserResponse> users = userRepository.findAllById(ids).stream().map(userToUserResponse()).toList();
+        return ResponseEntity.ok(users);
+    }
 }
