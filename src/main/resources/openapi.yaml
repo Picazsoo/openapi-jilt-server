@@ -62,6 +62,7 @@ components:
           type: integer
         address:
           $ref: '#/components/schemas/Address'
+      required: [ firstName, lastName, id ]
     ListUserResponse:
       type: array
       items:
@@ -85,12 +86,22 @@ components:
           type: string
           example: '94301'
           maxLength: 10
+          pattern: '^\d{5}(?:[-\s]\d{4})?$'
     PersonalInformation:
       type: object
       properties:
         firstName:
           type: string
           maxLength: 50
+        middleName:
+          type: string
+          maxLength: 50
         lastName:
           type: string
           maxLength: 50
+        email:
+          type: string
+          maxLength: 255
+          pattern: '^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
+          example: 'john.smith@gmail.com'
+      required: [ firstName, lastName ]
