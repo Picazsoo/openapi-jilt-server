@@ -104,4 +104,4 @@ components:
           maxLength: 255
           pattern: '^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
           example: 'john.smith@gmail.com'
-      required: [ firstName, lastName ]
+      required: [ firstName, lastName, email ]
