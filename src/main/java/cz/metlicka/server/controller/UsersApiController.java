@@ -80,7 +80,9 @@ public class UsersApiController implements UsersApi {
                     .id(user.getId())
                     .address(address)
                     .firstName(user.getFirstName())
+                    .middleName(user.getMiddleName())
                     .lastName(user.getLastName())
+                    .email(user.getEmail())
                     .build();
         };
     }
