@@ -44,6 +44,24 @@ paths:
               description: The URL of the newly created resource
         400:
           description: Validation error
+  /users/{ids}:
+    get:
+      parameters:
+        - in: path
+          name: ids
+          description: IDs of users return
+          required: true
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUserResponse'
 components:
   schemas:
     UserCreateRequest:
@@ -103,5 +121,4 @@ components:
           type: string
           maxLength: 255
           pattern: '^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
-          example: 'john.smith@gmail.com'
-      required: [ firstName, lastName, email ]
+      required: [ firstName, lastName ]
