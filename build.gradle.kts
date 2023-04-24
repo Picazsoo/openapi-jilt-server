@@ -22,8 +22,10 @@ repositories {
 extra["springCloudVersion"] = "2021.0.6"
 
 dependencies {
+    annotationProcessor("cc.jilt:jilt:1.2")
     annotationProcessor("org.projectlombok:lombok")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    compileOnly("cc.jilt:jilt:1.2")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     implementation("io.github.openfeign:feign-jackson:12.3")
